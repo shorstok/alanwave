@@ -1,0 +1,21 @@
+{
+  "name": "alanwave",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "esbuild": "^0.24.0",
+    "html-inline-script-webpack-plugin": "^3.2.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}

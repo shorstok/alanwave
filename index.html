@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alanwave</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 32px;
+    --element-width: 220px;
+    --foreground: #182234;
+    --background: hsl(220, 0%, 96%);
+    --accent: #367aa4;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  #container {
+    width: 100%;
+    height: 100svh;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    background-color: var(--background);
+  }
+
+  #rhytm-seciton {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    background-color: var(--background);
+    flex: 1;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  #settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    background-color: var(--background);
+  }
+
+  #settings * {
+    font-size: 32px;
+    color: var(--foreground);
+    background-color: var(--background);
+  }
+
+  #settings input {
+    width: var(--element-width);
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid var(--foreground);
+  }
+
+  #settings button {
+    width: var(--element-width);
+    padding: 2rem;
+    margin: 0;
+    background-color: var(--accent);
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .rhytm-canvas {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--background);
+  }
+
+  @media (min-width: 480px) {
+    #settings {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+    #container {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      padding: 4rem;
+      border-radius: 1.5rem;
+      height: 80svh;
+      margin-top: 10svh;
+      transition: box-shadow 0.3s ease;
+    }
+    #container:hover {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+  }
+</style>
+
+<body>
+  <div id="container">
+    <div id="settings">
+      <label for="bpmNumber">BPM</label>
+      <input type="number" id="bpmNumber" min="40" max="200" value="120" />
+      <button id="start">START</button>
+      <span id="phase" title="Phase">
+        ⬛🔲
+      </span>
+    </div>
+    <div id="rhytm-seciton">
+      <canvas id="rhytm1" class="rhytm-canvas"></canvas>
+      <canvas id="rhytm2" class="rhytm-canvas"></canvas>
+    </div>
+  </div>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
